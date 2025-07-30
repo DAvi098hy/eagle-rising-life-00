@@ -101,95 +101,95 @@ const Index = React.memo(() => {
             </h3>
             
             <Carousel className="w-full max-w-4xl mx-auto">
-              <CarouselContent>
-                <CarouselItem>
+              <CarouselContent className="-ml-2 md:-ml-4">
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
                     <img 
                       src="/lovable-uploads/45e3fc89-dfbc-4560-9dbd-87a2847aa1c8.png" 
                       alt="Depoimento real via WhatsApp - Transformação NoFap"
-                      className="max-w-xs rounded-lg shadow-lg"
+                      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
-                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
-                    <div className="flex items-start gap-3">
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
+                  <div className="bg-background/80 rounded-xl p-3 sm:p-4 md:p-6 border border-border/30 mx-2">
+                    <div className="flex items-start gap-2 sm:gap-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
-                        <p className="font-semibold text-foreground">Carlos T., 34 anos - Rio de Janeiro</p>
-                        <p className="text-muted-foreground text-sm mt-1">"Minha produtividade aumentou 300%. Finalmente tenho energia real para meus projetos."</p>
+                        <p className="font-semibold text-foreground text-sm sm:text-base">Carlos T., 34 anos - Rio de Janeiro</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm mt-1">"Minha produtividade aumentou 300%. Finalmente tenho energia real para meus projetos."</p>
                         <span className="text-green-600 text-xs font-medium">✅ Verificado em junho 2025</span>
                       </div>
                     </div>
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
-                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
-                    <div className="flex items-start gap-3">
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
+                  <div className="bg-background/80 rounded-xl p-3 sm:p-4 md:p-6 border border-border/30 mx-2">
+                    <div className="flex items-start gap-2 sm:gap-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
-                        <p className="font-semibold text-foreground">Miguel S., 25 anos - Belo Horizonte</p>
-                        <p className="text-muted-foreground text-sm mt-1">"Relacionamentos melhoraram drasticamente. Minha confiança está nas alturas!"</p>
+                        <p className="font-semibold text-foreground text-sm sm:text-base">Miguel S., 25 anos - Belo Horizonte</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm mt-1">"Relacionamentos melhoraram drasticamente. Minha confiança está nas alturas!"</p>
                         <span className="text-green-600 text-xs font-medium">✅ Verificado em Janeiro 2025</span>
                       </div>
                     </div>
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
                     <img 
                       src="/lovable-uploads/73428b18-23ef-433e-b577-f435ee941098.png" 
                       alt="Depoimento Thales Azevedo - Transformação NoFap"
-                      className="max-w-xs rounded-lg shadow-lg"
+                      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
                     <img 
                       src="/lovable-uploads/f990ec1b-d828-40da-82b6-59b63dde7cd7.png" 
                       alt="Depoimento Ricardo - Transformação NoFap"
-                      className="max-w-xs rounded-lg shadow-lg"
+                      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
                     <img 
                       src="/lovable-uploads/c23a81c8-12f4-41e7-86ec-cd30bd9a7cc6.png" 
                       alt="Depoimento Vinicius Zirbes - Transformação NoFap"
-                      className="max-w-xs rounded-lg shadow-lg"
+                      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
                     <img 
                       src="/lovable-uploads/9b88277b-7872-4465-8ea5-d8bdc4ff96e1.png" 
                       alt="Depoimento Luiz Miguel - Transformação NoFap"
-                      className="max-w-xs rounded-lg shadow-lg"
+                      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
                 
-                <CarouselItem>
+                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
                     <img 
                       src="/lovable-uploads/23afe433-1d96-4bb9-8cd1-72574810cab4.png" 
                       alt="Depoimento Ryan - Transformação NoFap"
-                      className="max-w-xs rounded-lg shadow-lg"
+                      className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="hidden sm:flex -left-4 md:-left-12" />
+              <CarouselNext className="hidden sm:flex -right-4 md:-right-12" />
             </Carousel>
             
             <div className="text-center mt-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
