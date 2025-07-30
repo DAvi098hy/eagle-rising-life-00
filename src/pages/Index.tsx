@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { BackgroundMusic } from "@/components/ui/background-music";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 // Lazy load componentes não críticos
@@ -93,46 +94,65 @@ const Index = React.memo(() => {
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
           </div>
           
-          {/* Seção de Prova Social */}
+          {/* Seção de Prova Social - Carrossel */}
           <div className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-2xl p-6 sm:p-8 border border-border/50">
             <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 text-foreground">
               🎯 CASOS DOCUMENTADOS - RESULTADOS REAIS
             </h3>
             
-            <div className="grid gap-4 sm:gap-6">
-              <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <p className="font-semibold text-foreground">Rafael M., 28 anos - São Paulo</p>
-                    <p className="text-muted-foreground text-sm mt-1">"Em 90 dias consegui quebrar um vício de 12 anos. O método funcionou quando tudo mais falhou."</p>
-                    <span className="text-green-600 text-xs font-medium">✅ Verificado a em Março 2025</span>
+            <Carousel className="w-full max-w-4xl mx-auto">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground">Rafael M., 28 anos - São Paulo</p>
+                        <p className="text-muted-foreground text-sm mt-1">"Em 90 dias consegui quebrar um vício de 12 anos. O método funcionou quando tudo mais falhou."</p>
+                        <span className="text-green-600 text-xs font-medium">✅ Verificado em Março 2025</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              
-              <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <p className="font-semibold text-foreground">Carlos T., 34 anos - Rio de Janeiro</p>
-                    <p className="text-muted-foreground text-sm mt-1">"Minha produtividade aumentou 300%. Finalmente tenho energia real para meus projetos."</p>
-                    <span className="text-green-600 text-xs font-medium">✅ Verificado em junho 2025</span>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground">Carlos T., 34 anos - Rio de Janeiro</p>
+                        <p className="text-muted-foreground text-sm mt-1">"Minha produtividade aumentou 300%. Finalmente tenho energia real para meus projetos."</p>
+                        <span className="text-green-600 text-xs font-medium">✅ Verificado em junho 2025</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              
-              <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <p className="font-semibold text-foreground">Miguel S., 25 anos - Belo Horizonte</p>
-                    <p className="text-muted-foreground text-sm mt-1">"Relacionamentos melhoraram drasticamente. Minha confiança está nas alturas!"</p>
-                    <span className="text-green-600 text-xs font-medium">✅ Verificado em Janeiro 2025</span>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="font-semibold text-foreground">Miguel S., 25 anos - Belo Horizonte</p>
+                        <p className="text-muted-foreground text-sm mt-1">"Relacionamentos melhoraram drasticamente. Minha confiança está nas alturas!"</p>
+                        <span className="text-green-600 text-xs font-medium">✅ Verificado em Janeiro 2025</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30 flex items-center justify-center min-h-[120px]">
+                    <div className="text-center text-muted-foreground">
+                      <p className="text-lg font-medium">📸 Espaço para suas imagens</p>
+                      <p className="text-sm mt-2">Adicione fotos dos resultados aqui</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
             
             <div className="text-center mt-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
               <p className="text-sm text-muted-foreground">
