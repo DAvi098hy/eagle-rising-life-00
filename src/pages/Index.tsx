@@ -139,11 +139,51 @@ const Index = React.memo(() => {
                 </CarouselItem>
                 
                 <CarouselItem>
-                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30 flex items-center justify-center">
+                  <div className="flex items-center justify-center p-2">
                     <img 
-                      src="/lovable-uploads/45e3fc89-dfbc-4560-9dbd-87a2847aa1c8.png" 
-                      alt="Depoimento real via WhatsApp - Transformação NoFap"
-                      className="max-w-full h-auto rounded-lg shadow-lg"
+                      src="/lovable-uploads/73428b18-23ef-433e-b577-f435ee941098.png" 
+                      alt="Depoimento Thales Azevedo - Transformação NoFap"
+                      className="max-w-xs rounded-lg shadow-lg"
+                    />
+                  </div>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="flex items-center justify-center p-2">
+                    <img 
+                      src="/lovable-uploads/f990ec1b-d828-40da-82b6-59b63dde7cd7.png" 
+                      alt="Depoimento Ricardo - Transformação NoFap"
+                      className="max-w-xs rounded-lg shadow-lg"
+                    />
+                  </div>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="flex items-center justify-center p-2">
+                    <img 
+                      src="/lovable-uploads/c23a81c8-12f4-41e7-86ec-cd30bd9a7cc6.png" 
+                      alt="Depoimento Vinicius Zirbes - Transformação NoFap"
+                      className="max-w-xs rounded-lg shadow-lg"
+                    />
+                  </div>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="flex items-center justify-center p-2">
+                    <img 
+                      src="/lovable-uploads/9b88277b-7872-4465-8ea5-d8bdc4ff96e1.png" 
+                      alt="Depoimento Luiz Miguel - Transformação NoFap"
+                      className="max-w-xs rounded-lg shadow-lg"
+                    />
+                  </div>
+                </CarouselItem>
+                
+                <CarouselItem>
+                  <div className="flex items-center justify-center p-2">
+                    <img 
+                      src="/lovable-uploads/23afe433-1d96-4bb9-8cd1-72574810cab4.png" 
+                      alt="Depoimento Ryan - Transformação NoFap"
+                      className="max-w-xs rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
