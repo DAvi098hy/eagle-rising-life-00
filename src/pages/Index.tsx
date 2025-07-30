@@ -103,15 +103,12 @@ const Index = React.memo(() => {
             <Carousel className="w-full max-w-4xl mx-auto">
               <CarouselContent>
                 <CarouselItem>
-                  <div className="bg-background/80 rounded-xl p-4 sm:p-6 border border-border/30">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <p className="font-semibold text-foreground">Rafael M., 28 anos - São Paulo</p>
-                        <p className="text-muted-foreground text-sm mt-1">"Em 90 dias consegui quebrar um vício de 12 anos. O método funcionou quando tudo mais falhou."</p>
-                        <span className="text-green-600 text-xs font-medium">✅ Verificado em Março 2025</span>
-                      </div>
-                    </div>
+                  <div className="flex items-center justify-center p-2">
+                    <img 
+                      src="/lovable-uploads/45e3fc89-dfbc-4560-9dbd-87a2847aa1c8.png" 
+                      alt="Depoimento real via WhatsApp - Transformação NoFap"
+                      className="max-w-xs rounded-lg shadow-lg"
+                    />
                   </div>
                 </CarouselItem>
                 
