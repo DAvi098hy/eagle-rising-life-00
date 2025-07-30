@@ -100,6 +100,16 @@ const Index = React.memo(() => {
               🎯 CASOS DOCUMENTADOS - RESULTADOS REAIS
             </h3>
             
+            {/* Indicação de navegação para mobile */}
+            <div className="flex justify-center items-center gap-2 mb-4 sm:hidden">
+              <span className="text-sm text-muted-foreground">👆 Arraste para ver mais</span>
+              <div className="flex gap-1">
+                <div className="w-2 h-2 bg-primary/60 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-primary/40 rounded-full animate-pulse delay-100"></div>
+                <div className="w-2 h-2 bg-primary/20 rounded-full animate-pulse delay-200"></div>
+              </div>
+            </div>
+
             <Carousel className="w-full max-w-4xl mx-auto">
               <CarouselContent className="-ml-2 md:-ml-4">
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
@@ -109,32 +119,6 @@ const Index = React.memo(() => {
                       alt="Depoimento real via WhatsApp - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
                     />
-                  </div>
-                </CarouselItem>
-                
-                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
-                  <div className="bg-background/80 rounded-xl p-3 sm:p-4 md:p-6 border border-border/30 mx-2">
-                    <div className="flex items-start gap-2 sm:gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <p className="font-semibold text-foreground text-sm sm:text-base">Carlos T., 34 anos - Rio de Janeiro</p>
-                        <p className="text-muted-foreground text-xs sm:text-sm mt-1">"Minha produtividade aumentou 300%. Finalmente tenho energia real para meus projetos."</p>
-                        <span className="text-green-600 text-xs font-medium">✅ Verificado em junho 2025</span>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-                
-                <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
-                  <div className="bg-background/80 rounded-xl p-3 sm:p-4 md:p-6 border border-border/30 mx-2">
-                    <div className="flex items-start gap-2 sm:gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <p className="font-semibold text-foreground text-sm sm:text-base">Miguel S., 25 anos - Belo Horizonte</p>
-                        <p className="text-muted-foreground text-xs sm:text-sm mt-1">"Relacionamentos melhoraram drasticamente. Minha confiança está nas alturas!"</p>
-                        <span className="text-green-600 text-xs font-medium">✅ Verificado em Janeiro 2025</span>
-                      </div>
-                    </div>
                   </div>
                 </CarouselItem>
                 
