@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/ui/hero-section";
 import { BackgroundMusic } from "@/components/ui/background-music";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 // Lazy load componentes não críticos
@@ -203,6 +204,94 @@ const Index = React.memo(() => {
       <Suspense fallback={<SectionLoader />}>
         <CTASection />
       </Suspense>
+      
+      {/* FAQ Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-card to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
+              ❓ PERGUNTAS QUE JÁ RESPONDO AGORA:
+            </h2>
+            
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-background/80 border border-border/50 rounded-xl px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  "E se eu já tentei parar mil vezes?"
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pt-2">
+                  O método já funcionou com homens que tentaram por 10 anos e falharam.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="bg-background/80 border border-border/50 rounded-xl px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  "Não sei se vou ter disciplina…"
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pt-2">
+                  Por isso existe o Plano de Ação de 90 dias + o Protocolo Anti-Recaída.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="bg-background/80 border border-border/50 rounded-xl px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  "Parece bom demais pra ser verdade…"
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pt-2">
+                  É por isso que você tem garantia de 7 dias. Teste e veja.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="bg-background/80 border border-border/50 rounded-xl px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                  "Isso tem base científica mesmo?"
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pt-2">
+                  Sim. Harvard, Journal of Sexual Medicine e centenas de depoimentos.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-primary/5 to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+              🔓 TÁ NAS SUAS MÃOS AGORA
+            </h2>
+            
+            <div className="space-y-6 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto">
+              <p>
+                Você pode continuar acordando sem energia, repetindo o mesmo ciclo e se sentindo um lixo por dentro.
+              </p>
+              <p>
+                Ou pode clicar no botão abaixo, começar agora e ver resultados ainda hoje à noite.
+              </p>
+            </div>
+            
+            <div className="py-8">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground px-8 sm:px-12 py-4 sm:py-6 rounded-xl font-bold text-lg sm:text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                🎯 QUERO MINHA TRANSFORMAÇÃO AGORA
+              </Button>
+            </div>
+            
+            <div className="space-y-4 text-center">
+              <p className="text-sm sm:text-base text-muted-foreground">
+                📆 Oferta disponível por 24h para quem veio dos nossos vídeos. Depois disso, o valor volta para R$197.
+              </p>
+              <p className="text-sm text-muted-foreground italic">
+                PS: A maioria dos homens que lê até aqui não toma ação. Mas os 7% que tomam — são os que mudam tudo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <Suspense fallback={<SectionLoader />}>
         <Footer />
       </Suspense>
