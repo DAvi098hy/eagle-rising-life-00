@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useCallback } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { BackgroundMusic } from "@/components/ui/background-music";
 import { Button } from "@/components/ui/button";
@@ -18,61 +18,10 @@ const GuaranteeExtendedSection = lazy(() => import("@/components/ui/guarantee-ex
 const CTASection = lazy(() => import("@/components/ui/cta-section").then(m => ({ default: m.CTASection })));
 const Footer = lazy(() => import("@/components/ui/footer").then(m => ({ default: m.Footer })));
 
-// Loading placeholder otimizado com CSS inline para evitar render-blocking
+// Loading placeholder otimizado
 const SectionLoader = React.memo(() => (
-  <div className="section-loader" />
+  <div className="h-32 bg-gradient-to-r from-muted/50 to-muted/30 animate-pulse rounded-lg" />
 ));
-
-// Componente de imagem otimizada com lazy loading
-const OptimizedImage = React.memo(({ 
-  src, 
-  alt, 
-  className = "", 
-  priority = false 
-}: { 
-  src: string; 
-  alt: string; 
-  className?: string; 
-  priority?: boolean; 
-}) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(priority);
-
-  const imgRef = useCallback((node: HTMLImageElement | null) => {
-    if (node && !priority) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.disconnect();
-          }
-        },
-        { rootMargin: '50px' }
-      );
-      observer.observe(node);
-      return () => observer.disconnect();
-    }
-  }, [priority]);
-
-  return (
-    <div className={`relative ${className}`}>
-      {!isLoaded && (
-        <div className="absolute inset-0 section-loader" />
-      )}
-      {(isInView || priority) && (
-        <img
-          ref={imgRef}
-          src={src}
-          alt={alt}
-          className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoad={() => setIsLoaded(true)}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-        />
-      )}
-    </div>
-  );
-});
 
 // Componente de Navegação
 const NavigationButton = React.memo(({ onClick, text, isLast = false }: { onClick: () => void; text: string; isLast?: boolean }) => (
@@ -91,11 +40,11 @@ const NavigationButton = React.memo(({ onClick, text, isLast = false }: { onClic
 const Index = React.memo(() => {
   const [currentPart, setCurrentPart] = useState(1);
 
-  const handleNextPart = useCallback(() => {
+  const handleNextPart = () => {
     setCurrentPart(prev => Math.min(prev + 1, 4));
     // Scroll suave para o topo da próxima seção
     window.scrollTo({ top: window.scrollY + 100, behavior: 'smooth' });
-  }, []);
+  };
 
   const renderPart1 = () => (
     <>
@@ -166,7 +115,7 @@ const Index = React.memo(() => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <OptimizedImage 
+                    <img 
                       src="/lovable-uploads/45e3fc89-dfbc-4560-9dbd-87a2847aa1c8.png" 
                       alt="Depoimento real via WhatsApp - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -176,7 +125,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <OptimizedImage 
+                    <img 
                       src="/lovable-uploads/73428b18-23ef-433e-b577-f435ee941098.png" 
                       alt="Depoimento Thales Azevedo - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -186,7 +135,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <OptimizedImage 
+                    <img 
                       src="/lovable-uploads/f990ec1b-d828-40da-82b6-59b63dde7cd7.png" 
                       alt="Depoimento Ricardo - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -196,7 +145,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <OptimizedImage 
+                    <img 
                       src="/lovable-uploads/c23a81c8-12f4-41e7-86ec-cd30bd9a7cc6.png" 
                       alt="Depoimento Vinicius Zirbes - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -206,7 +155,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <OptimizedImage 
+                    <img 
                       src="/lovable-uploads/9b88277b-7872-4465-8ea5-d8bdc4ff96e1.png" 
                       alt="Depoimento Luiz Miguel - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -216,7 +165,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <OptimizedImage 
+                    <img 
                       src="/lovable-uploads/23afe433-1d96-4bb9-8cd1-72574810cab4.png" 
                       alt="Depoimento Ryan - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -354,7 +303,7 @@ const Index = React.memo(() => {
       <BackgroundMusic 
         src="/lofi-ambient.wav"
         volume={0.15}
-        autoPlay={false}
+        autoPlay={true}
       />
       <HeroSection />
       

@@ -1,4 +1,3 @@
-/* Critical CSS above the fold já está inline no HTML */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
