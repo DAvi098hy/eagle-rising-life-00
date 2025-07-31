@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import heroImage from "@/assets/hero-transformation.jpg";
 
 export const HeroSection = React.memo(() => {
+  // Preload da imagem crítica do hero
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroImage;
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="hero-container relative min-h-screen flex items-center justify-center overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
