@@ -7,28 +7,76 @@
     <meta name="description" content="Lovable Generated Project" />
     <meta name="author" content="Lovable" />
     
+    <!-- Preconnect para fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload das fontes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Fallback para fontes -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- CSS Crítico Inline -->
+    <style>
+      /* Reset básico e cores críticas */
+      *, *::before, *::after { box-sizing: border-box; }
+      html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+      body { margin: 0; font-family: Inter, system-ui, -apple-system, sans-serif; }
+      
+      /* Variáveis CSS críticas */
+      :root {
+        --background: 220 30% 5%;
+        --foreground: 35 100% 95%;
+        --primary: 35 100% 65%;
+        --primary-foreground: 220 30% 5%;
+        --primary-glow: 35 100% 75%;
+        --card: 220 25% 8%;
+        --border: 220 20% 18%;
+        --muted: 220 20% 12%;
+        --muted-foreground: 220 15% 65%;
+        --gradient-primary: linear-gradient(135deg, hsl(35 100% 65%), hsl(25 95% 60%), hsl(15 90% 55%));
+        --gradient-hero: linear-gradient(135deg, hsl(220 30% 5%), hsl(210 35% 8%), hsl(200 40% 12%));
+        --shadow-glow: 0 0 50px hsl(35 100% 65% / 0.4);
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Estilos críticos para a primeira dobra */
+      body { background-color: hsl(var(--background)); color: hsl(var(--foreground)); }
+      .min-h-screen { min-height: 100vh; }
+      .bg-background { background-color: hsl(var(--background)); }
+      .text-foreground { color: hsl(var(--foreground)); }
+      
+      /* Hero section crítico */
+      .hero-gradient { background: var(--gradient-hero); }
+      .font-display { font-family: 'Playfair Display', serif; }
+      .font-body { font-family: 'Inter', sans-serif; }
+      
+      /* Loading spinner crítico */
+      .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
+      }
+      
+      /* Gradiente crítico */
+      .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+      .from-muted\/50 { --tw-gradient-from: hsl(var(--muted) / 0.5); --tw-gradient-to: hsl(var(--muted) / 0); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+      .to-muted\/30 { --tw-gradient-to: hsl(var(--muted) / 0.3); }
+      
+      /* Utilities críticos */
+      .h-32 { height: 8rem; }
+      .rounded-lg { border-radius: 0.5rem; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      
+      /* Ocultar por padrão elementos não críticos */
+      .lazy-section { opacity: 0; transition: opacity 0.3s ease; }
+      .lazy-section.loaded { opacity: 1; }
+    </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM9Y61VQES"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-RM9Y61VQES');
-    </script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "snoy8mkija");
-    </script>
 
     <meta property="og:title" content="eagle-rising-life" />
     <meta property="og:description" content="Lovable Generated Project" />
@@ -43,5 +91,43 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Scripts de Analytics - Carregamento Diferido -->
+    <script>
+      // Função para carregar scripts após o carregamento inicial
+      function loadAnalytics() {
+        // Google Analytics
+        const gtag = document.createElement('script');
+        gtag.async = true;
+        gtag.src = 'https://www.googletagmanager.com/gtag/js?id=G-RM9Y61VQES';
+        document.head.appendChild(gtag);
+        
+        gtag.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RM9Y61VQES');
+        };
+        
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          var t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "snoy8mkija");
+      }
+      
+      // Carregar analytics após interação do usuário ou timeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      } else {
+        setTimeout(loadAnalytics, 2000);
+      }
+      
+      // Carregar imediatamente em interação
+      ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(function(event) {
+        document.addEventListener(event, loadAnalytics, { once: true, passive: true });
+      });
+    </script>
   </body>
 </html>

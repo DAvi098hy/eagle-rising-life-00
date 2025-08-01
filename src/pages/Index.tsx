@@ -1,9 +1,10 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { BackgroundMusic } from "@/components/ui/background-music";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 // Lazy load componentes não críticos
@@ -115,7 +116,7 @@ const Index = React.memo(() => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <img 
+                    <OptimizedImage 
                       src="/lovable-uploads/45e3fc89-dfbc-4560-9dbd-87a2847aa1c8.png" 
                       alt="Depoimento real via WhatsApp - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -125,7 +126,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <img 
+                    <OptimizedImage 
                       src="/lovable-uploads/73428b18-23ef-433e-b577-f435ee941098.png" 
                       alt="Depoimento Thales Azevedo - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -135,7 +136,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <img 
+                    <OptimizedImage 
                       src="/lovable-uploads/f990ec1b-d828-40da-82b6-59b63dde7cd7.png" 
                       alt="Depoimento Ricardo - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -145,7 +146,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <img 
+                    <OptimizedImage 
                       src="/lovable-uploads/c23a81c8-12f4-41e7-86ec-cd30bd9a7cc6.png" 
                       alt="Depoimento Vinicius Zirbes - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -155,7 +156,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <img 
+                    <OptimizedImage 
                       src="/lovable-uploads/9b88277b-7872-4465-8ea5-d8bdc4ff96e1.png" 
                       alt="Depoimento Luiz Miguel - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
@@ -165,7 +166,7 @@ const Index = React.memo(() => {
                 
                 <CarouselItem className="pl-2 md:pl-4 basis-full sm:basis-4/5 md:basis-3/5">
                   <div className="flex items-center justify-center p-2">
-                    <img 
+                    <OptimizedImage 
                       src="/lovable-uploads/23afe433-1d96-4bb9-8cd1-72574810cab4.png" 
                       alt="Depoimento Ryan - Transformação NoFap"
                       className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-xs rounded-lg shadow-lg"
