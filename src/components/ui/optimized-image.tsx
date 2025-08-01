@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -7,60 +7,56 @@ interface OptimizedImageProps {
   priority?: boolean;
 }
 
-export const OptimizedImage: React.FC<OptimizedImageProps> = ({
+export const OptimizedImage = ({
   src,
   alt,
   className = '',
   priority = false
-}) => {
+}: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(priority);
+  const [shouldLoad, setShouldLoad] = useState(priority);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (priority || typeof window === 'undefined') {
-      setIsInView(true);
-      return;
-    }
+    if (priority) return;
 
-    // Verificar se IntersectionObserver está disponível
-    if (!window.IntersectionObserver) {
-      setIsInView(true);
+    // Fallback simples se IntersectionObserver não estiver disponível
+    if (typeof window === 'undefined' || !window.IntersectionObserver) {
+      setShouldLoad(true);
       return;
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      (entries) => {
+        const [entry] = entries;
         if (entry.isIntersecting) {
-          setIsInView(true);
+          setShouldLoad(true);
           observer.disconnect();
         }
       },
-      {
-        rootMargin: '50px'
-      }
+      { rootMargin: '50px' }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    const currentImg = imgRef.current;
+    if (currentImg) {
+      observer.observe(currentImg);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentImg) {
+        observer.unobserve(currentImg);
+      }
+    };
   }, [priority]);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
-  };
 
   return (
     <img
       ref={imgRef}
-      src={isInView ? src : 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzMzMyIvPjwvc3ZnPg=='}
+      src={shouldLoad ? src : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'}
       alt={alt}
       className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-70'} ${className}`}
-      onLoad={handleLoad}
+      onLoad={() => setIsLoaded(true)}
       loading={priority ? 'eager' : 'lazy'}
-      decoding="async"
     />
   );
 };
