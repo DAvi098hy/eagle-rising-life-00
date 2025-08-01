@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useEffect } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { BackgroundMusic } from "@/components/ui/background-music";
 import { Button } from "@/components/ui/button";
