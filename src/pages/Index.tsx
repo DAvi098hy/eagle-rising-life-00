@@ -276,6 +276,7 @@ const Index = React.memo(() => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground px-8 sm:px-12 py-4 sm:py-6 rounded-xl font-bold text-lg sm:text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                onClick={() => window.open('https://checkout.zentrapay.online/step/nofap-life-style/', '_blank')}
               >
                 🎯 QUERO MINHA TRANSFORMAÇÃO AGORA
               </Button>
