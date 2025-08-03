@@ -50,7 +50,7 @@ export const OfferPricing = React.memo(() => {
             onClick={() => window.open('https://checkout.zentrapay.online/step/nofap-life-style/', '_blank')}
           >
             <span className="relative z-10 text-center leading-tight tracking-[0.02em] drop-shadow-sm">
-              VOU OBTER AGORA
+              ATIVAR MEU MODO HOMEM 100%
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </Button>
