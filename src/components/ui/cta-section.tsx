@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShieldCheck, CreditCard } from "lucide-react";
-
 export const CTASection = () => {
-  return (
-    <section id="action-section" className="py-12 sm:py-16 md:py-20 bg-black">
+  return <section id="action-section" className="py-12 sm:py-16 md:py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center space-y-8 sm:space-y-12">
           <div className="space-y-6 sm:space-y-8">
@@ -17,14 +15,8 @@ export const CTASection = () => {
               </div>
             </div>
             
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black text-sm sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-black tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 w-full min-h-[60px] sm:min-h-[68px] border-2 border-orange-400/30 relative overflow-hidden group"
-              onClick={() => window.open('https://checkout.zentrapay.online/step/nofap-life-style/', '_blank')}
-            >
-              <span className="relative z-10 text-center leading-tight tracking-[0.02em] drop-shadow-sm">
-                QUERO PARTICIPAR
-              </span>
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black text-sm sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-black tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 w-full min-h-[60px] sm:min-h-[68px] border-2 border-orange-400/30 relative overflow-hidden group" onClick={() => window.open('https://checkout.zentrapay.online/step/nofap-life-style/', '_blank')}>
+              <span className="relative z-10 text-center leading-tight tracking-[0.02em] drop-shadow-sm">ATIVAR MEU MODO HOMEM 100%</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </Button>
             
@@ -45,6 +37,5 @@ export const CTASection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
