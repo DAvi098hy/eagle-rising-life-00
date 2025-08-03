@@ -19,22 +19,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    // Otimizações seguras de build
-    rollupOptions: {
-      output: {
-        // Code splitting básico e seguro
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-toast'],
-          carousel: ['embla-carousel-react'],
-          icons: ['lucide-react']
-        }
-      }
-    },
-    // CSS Code Splitting
-    cssCodeSplit: true,
-    // Limites de chunk
-    chunkSizeWarningLimit: 1000
-  }
 }));
