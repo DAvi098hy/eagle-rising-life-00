@@ -47,7 +47,10 @@ export const OfferPricing = React.memo(() => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black text-sm sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-black tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 w-full min-h-[60px] sm:min-h-[68px] border-2 border-orange-400/30 relative overflow-hidden group"
-            onClick={() => window.open('https://checkout.zentrapay.online/step/nofap-life-style/', '_blank')}
+            onClick={() => {
+              console.log('Botão clicado, abrindo checkout...');
+              window.open('https://checkout.zentrapay.online/step/nofap-life-style/', '_blank');
+            }}
           >
             <span className="relative z-10 text-center leading-tight tracking-[0.02em] drop-shadow-sm">
               ATIVAR MEU MODO HOMEM 100%
