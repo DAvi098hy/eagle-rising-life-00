@@ -53,7 +53,7 @@ export const OfferPricing = React.memo(() => {
             }}
           >
             <span className="relative z-10 text-center leading-tight tracking-[0.02em] drop-shadow-sm">
-              ATIVAR MEU MODO HOMEM 100%
+              CANSEI DE ME SENTIR FRACO
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </Button>
