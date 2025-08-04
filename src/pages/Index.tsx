@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy } from "react";
 import { HeroSection } from "@/components/ui/hero-section";
 import { BackgroundMusic } from "@/components/ui/background-music";
 import { Button } from "@/components/ui/button";
@@ -39,7 +39,7 @@ const NavigationButton = React.memo(({ onClick, text, isLast = false }: { onClic
 ));
 
 const Index = React.memo(() => {
-  const [currentPart, setCurrentPart] = useState(1);
+  const [currentPart, setCurrentPart] = React.useState(1);
 
   const handleNextPart = () => {
     setCurrentPart(prev => Math.min(prev + 1, 4));
