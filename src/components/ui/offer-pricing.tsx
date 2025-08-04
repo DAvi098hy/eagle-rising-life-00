@@ -44,8 +44,8 @@ export const OfferPricing = React.memo(() => {
             </div>
           </div>
           
-          <Button 
-            size="lg" 
+          <button
+            type="button"
             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black text-sm sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl font-black tracking-wide transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 w-full min-h-[60px] sm:min-h-[68px] border-2 border-orange-400/30 relative overflow-hidden group"
             onClick={() => {
               console.log('Offer Pricing Button clicked, redirecting to checkout...');
@@ -61,7 +61,7 @@ export const OfferPricing = React.memo(() => {
               CANSEI DE ME SENTIR FRACO
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </Button>
+          </button>
           
           <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/30 rounded-lg p-3 sm:p-4 max-w-xl mx-auto">
             <p className="text-xs sm:text-sm text-amber-800 dark:text-amber-200 text-center leading-relaxed">
